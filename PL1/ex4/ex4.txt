@@ -1,0 +1,50 @@
+int main(void) {
+2 int a=0, b, c, d;
+3 b = (int) fork(); // 0
+4 c = (int) getpid(); /* getpid(), getppid(): unistd.h*/ //pid do processo
+5 d = (int) getppid(); //pid do pai
+6 a = a + 5;
+7 printf("\na=%d, b=%d, c=%d, d=%d\n",a,b,c,d);
+8 }
+
+a) Em ambos os processos:
+a é igual
+
+b é diferente
+
+b no pai será o pid do filho, e no filho será 0
+
+c será diferente 
+pois getpid vai buscar o pid do processo, e os processos têm pids
+diferentes.
+
+d será diferente
+
+d como vai buscar o pid do pai, então no processo do filho será o pid do próprio pai.
+No processo do pai, é o pid da shell.
+
+b)
+
+|
+|__
+|  |
+|  |
+|  |
+|  |
+|  |
+|  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
