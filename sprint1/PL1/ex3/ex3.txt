@@ -1,0 +1,19 @@
+1 int main(void) {
+2 fork(); fork(); fork();
+3 printf("SCOMP!\n");
+4 }
+
+a) 
+2^n processos, sendo n o número de forks. Sendo n = 3, logo 8 processos
+
+b) 
+|
+|______
+|      |
+|___   |__
+|   |  |  |
+|_  |_ |_ |_
+| | | || || |
+
+c)
+É imprimido 8x

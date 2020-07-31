@@ -1,0 +1,24 @@
+1 int main(void) {
+2 	int x = 1;
+3 	pid_t p = fork(); /*pid_t: sys/types.h; fork(): unistd.h*/
+4 	if (p == 0) {
+5 	  x = x+1;
+6 	  printf("1. x = %d\n", x);
+7 	} else {
+8 	  x = x-1
+9 	  printf("2. x = %d\n", x);
+10 	}
+11 	printf("3. %d; x = %d\n", p, x);
+12 }
+
+
+a)
+O output seria:
+-Para o Pai: "2. x = 0" e "3. 1234; x = 0"
+-Para o filho: "1. x = 2" e "3. 1234; x = 2" 
+
+b) 
+Não. Não existe nada que garanta que a linha 9 sera imprimida antes da linha 11,
+porque existe sempre influência do escalonador.
+
+

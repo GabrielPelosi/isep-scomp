@@ -1,0 +1,2 @@
+O melhor número de processos é o que se adequa à máquina que estamos a usar.
+Para a melhor performance, um número de processos igual ao número de processadores é o ideal.
